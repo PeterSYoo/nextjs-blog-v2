@@ -30,18 +30,6 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
-    {
-      name: 'socialsTitle',
-      title: 'Socials Title',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'showSocialsSection',
-      title: 'Social Section',
-      type: 'boolean',
-      validation: (Rule) => Rule.required(),
-    },
   ],
   preview: {
     select: {
