@@ -11,6 +11,11 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 const Home: NextPage = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [homeHovering, setHomeHovering] = useState(false);
+  const [portfolioHovering, setPortfolioHovering] = useState(false);
+  const [liHovering, setLiHovering] = useState(false);
+  const [gitHovering, setGitHovering] = useState(false);
+  const [emailHovering, setEmailHovering] = useState(false);
 
   return (
     <>
@@ -31,7 +36,18 @@ const Home: NextPage = () => {
               to="home"
               className="cursor-pointer"
             >
-              <IoHomeSharp className="text-3xl cursor-pointer" />
+              <div
+                onMouseEnter={() => setHomeHovering(true)}
+                onMouseLeave={() => setHomeHovering(false)}
+              >
+                {homeHovering ? (
+                  <span className="text-2xl cursor-pointer font-bold px-10 ">
+                    HOME
+                  </span>
+                ) : (
+                  <IoHomeSharp className="text-3xl cursor-pointer" />
+                )}
+              </div>
             </Link>
             <Link
               href="https://petersyoo.netlify.app/"
@@ -41,7 +57,18 @@ const Home: NextPage = () => {
               passHref
             >
               <a target="_blank">
-                <IoBriefcase className="text-3xl cursor-pointer" />
+                <div
+                  onMouseEnter={() => setPortfolioHovering(true)}
+                  onMouseLeave={() => setPortfolioHovering(false)}
+                >
+                  {portfolioHovering ? (
+                    <span className="text-2xl cursor-pointer font-bold px-10 ">
+                      PORTFOLIO
+                    </span>
+                  ) : (
+                    <IoBriefcase className="text-3xl cursor-pointer" />
+                  )}
+                </div>
               </a>
             </Link>
             <Link
@@ -52,7 +79,18 @@ const Home: NextPage = () => {
               passHref
             >
               <a target="_blank">
-                <SiLinkedin className="text-3xl cursor-pointer" />
+                <div
+                  onMouseEnter={() => setLiHovering(true)}
+                  onMouseLeave={() => setLiHovering(false)}
+                >
+                  {liHovering ? (
+                    <span className="text-2xl cursor-pointer font-bold px-10 ">
+                      LINKEDIN
+                    </span>
+                  ) : (
+                    <SiLinkedin className="text-3xl cursor-pointer" />
+                  )}
+                </div>
               </a>
             </Link>
             <Link
@@ -63,8 +101,18 @@ const Home: NextPage = () => {
               passHref
             >
               <a target="_blank">
-                {' '}
-                <SiGithub className="text-3xl cursor-pointer" />
+                <div
+                  onMouseEnter={() => setGitHovering(true)}
+                  onMouseLeave={() => setGitHovering(false)}
+                >
+                  {gitHovering ? (
+                    <span className="text-2xl cursor-pointer font-bold px-10">
+                      GITHUB
+                    </span>
+                  ) : (
+                    <SiGithub className="text-3xl cursor-pointer" />
+                  )}
+                </div>
               </a>
             </Link>
             <Link
@@ -75,7 +123,18 @@ const Home: NextPage = () => {
               passHref
             >
               <a target="_blank">
-                <IoMailSharp className="text-3xl cursor-pointer" />
+                <div
+                  onMouseEnter={() => setEmailHovering(true)}
+                  onMouseLeave={() => setEmailHovering(false)}
+                >
+                  {emailHovering ? (
+                    <span className="text-2xl cursor-pointer font-bold px-10 ">
+                      EMAIL
+                    </span>
+                  ) : (
+                    <IoMailSharp className="text-3xl cursor-pointer" />
+                  )}
+                </div>
               </a>
             </Link>
           </div>
