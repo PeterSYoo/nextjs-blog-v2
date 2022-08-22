@@ -39,13 +39,14 @@ const Home: NextPage = () => {
               <div
                 onMouseEnter={() => setHomeHovering(true)}
                 onMouseLeave={() => setHomeHovering(false)}
+                className="max-h-5"
               >
                 {homeHovering ? (
-                  <span className="text-2xl cursor-pointer font-bold px-10 ">
+                  <span className="text-2xl cursor-pointer font-bold px-10 opacity-0 hover:opacity-100 transition-opacity duration-500">
                     HOME
                   </span>
                 ) : (
-                  <IoHomeSharp className="text-3xl cursor-pointer" />
+                  <IoHomeSharp className="text-3xl cursor-pointer " />
                 )}
               </div>
             </Link>
@@ -60,9 +61,10 @@ const Home: NextPage = () => {
                 <div
                   onMouseEnter={() => setPortfolioHovering(true)}
                   onMouseLeave={() => setPortfolioHovering(false)}
+                  className="max-h-5"
                 >
                   {portfolioHovering ? (
-                    <span className="text-2xl cursor-pointer font-bold px-10 ">
+                    <span className="text-2xl cursor-pointer font-bold px-10 opacity-0 hover:opacity-100 transition-opacity duration-500 ">
                       PORTFOLIO
                     </span>
                   ) : (
@@ -82,9 +84,10 @@ const Home: NextPage = () => {
                 <div
                   onMouseEnter={() => setLiHovering(true)}
                   onMouseLeave={() => setLiHovering(false)}
+                  className="max-h-5"
                 >
                   {liHovering ? (
-                    <span className="text-2xl cursor-pointer font-bold px-10 ">
+                    <span className="text-2xl cursor-pointer font-bold px-10 opacity-0 hover:opacity-100 transition-opacity duration-500 ">
                       LINKEDIN
                     </span>
                   ) : (
@@ -104,9 +107,10 @@ const Home: NextPage = () => {
                 <div
                   onMouseEnter={() => setGitHovering(true)}
                   onMouseLeave={() => setGitHovering(false)}
+                  className="max-h-5"
                 >
                   {gitHovering ? (
-                    <span className="text-2xl cursor-pointer font-bold px-10">
+                    <span className="text-2xl cursor-pointer font-bold px-10 opacity-0 hover:opacity-100 transition-opacity duration-500">
                       GITHUB
                     </span>
                   ) : (
@@ -126,9 +130,10 @@ const Home: NextPage = () => {
                 <div
                   onMouseEnter={() => setEmailHovering(true)}
                   onMouseLeave={() => setEmailHovering(false)}
+                  className="max-h-5"
                 >
                   {emailHovering ? (
-                    <span className="text-2xl cursor-pointer font-bold px-10 ">
+                    <span className="text-2xl cursor-pointer font-bold px-10 opacity-0 hover:opacity-100 transition-opacity duration-500 ">
                       EMAIL
                     </span>
                   ) : (
