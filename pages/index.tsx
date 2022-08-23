@@ -242,12 +242,43 @@ const Home = ({ posts }: Props) => {
         <div className="pt-10 flex flex-col md:p-20 md:box md:row-span-1 md:col-span-3">
           {posts.map((post) => (
             <Link key={post._id} href={`/post/${post.slug.current}`}>
-              <div className="">
-                <img src={urlFor(post.mainImage).url()!} alt="" />
-              </div>
+              <>
+                <div className="grid grid-cols-6">
+                  <div className="col-span-5">
+                    <div className="flex justify-between pt-5">
+                      <div className="flex">
+                        <img
+                          src={urlFor(post.author.image).url()!}
+                          alt=""
+                          className="aspect-auto h-8 w-8"
+                        />
+                        <div className="pl-3 pt-1 flex">
+                          <div className="">{post.author.name}</div>
+                          <div className="text-xs pt-1">&nbsp;∙&nbsp;</div>
+                          <div className="text-gray-300">Date</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="pl-1 pt-3 text-xl font-bold">
+                      {post.title}
+                    </div>
+                    <div className="pl-1 pt-2 pb-8 font-serif">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Enim nunc faucibus a pellentesque. Quis imperdiet
+                      massa tincidunt nunc pulvinar sapien et ligula
+                      ullamcorper. Ipsum dolor sit amet consectetu...
+                    </div>
+                  </div>
+
+                  <div className="col-span-1 p-1 pt-20 -mt-2">
+                    <img src={urlFor(post.mainImage).url()!} alt="" />
+                  </div>
+                </div>
+                <div className="border-b border-gr-400"></div>
+              </>
             </Link>
           ))}
-          <div className="border-b border-gr-400"></div>
         </div>
       </div>
 
