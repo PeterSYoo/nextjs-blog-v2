@@ -271,8 +271,12 @@ const Home = ({ posts }: Props) => {
                     </div>
                   </div>
 
-                  <div className="col-span-1 p-1 pt-20 -mt-2">
-                    <img src={urlFor(post.mainImage).url()!} alt="" />
+                  <div className="col-span-1 p-5 pt-20 -mt-2">
+                    <img
+                      src={urlFor(post.mainImage).url()!}
+                      alt=""
+                      className="h-28 w-28 absolute object-contain"
+                    />
                   </div>
                 </div>
                 <div className="border-b border-gr-400"></div>
