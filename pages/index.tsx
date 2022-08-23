@@ -8,8 +8,14 @@ import { IoHomeSharp, IoBriefcase, IoMailSharp } from 'react-icons/io5';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
+import { sanityClient, urlFor } from '../sanity';
+import { Post } from '../typings';
 
-const Home: NextPage = () => {
+interface Props {
+  posts: [Post];
+}
+
+const Home = ({ posts }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [homeHovering, setHomeHovering] = useState(false);
   const [portfolioHovering, setPortfolioHovering] = useState(false);
@@ -232,8 +238,15 @@ const Home: NextPage = () => {
             </div>
           )}
         </Transition>
+        {/* Posts */}
         <div className="pt-10 flex flex-col md:p-20 md:box md:row-span-1 md:col-span-3">
-          Content
+          {posts.map((post) => (
+            <Link key={post._id} href={`/post/${post.slug.current}`}>
+              <div className="">
+                <img src={urlFor(post.mainImage).url()!} alt="" />
+              </div>
+            </Link>
+          ))}
           <div className="border-b border-gr-400"></div>
         </div>
       </div>
@@ -244,3 +257,27 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getServerSideProps = async () => {
+  const query = `
+  *[_type == "post"] {
+    _id,
+    title,
+    author -> {
+      name,
+      image
+    },
+    description,
+    mainImage,
+    slug,
+  }
+  `;
+
+  const posts = await sanityClient.fetch(query);
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};
