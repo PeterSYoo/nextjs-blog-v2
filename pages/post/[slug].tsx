@@ -22,9 +22,9 @@ const Posts = ({ post }: Props) => {
               <img
                 src={urlFor(post.author.image).url()!}
                 alt=""
-                className="aspect-auto h-14 w-14"
+                className="aspect-auto h-12 w-12"
               />
-              <div className="pl-3 pt-1 flex flex-col">
+              <div className="pl-4 -mt-1 flex flex-col justify-between">
                 <div className="">{post.author.name}</div>
                 <div className="text-gray-400 text-sm">
                   {new Date(post.publishedAt).toDateString()}
@@ -32,8 +32,8 @@ const Posts = ({ post }: Props) => {
               </div>
             </div>
           </div>
-          <div className="pl-1 pt-3 text-xl font-bold">{post.title}</div>
-          <div className="pl-1 pt-2 pb-8 font-serif">
+          <div className="pl-1 pt-8 text-3xl font-bold">{post.title}</div>
+          <div className="pl-1 pt-6 pb-40 font-serif text-xl font-thin leading-9">
             <PortableText
               className=""
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}

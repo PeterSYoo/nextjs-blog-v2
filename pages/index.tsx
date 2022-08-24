@@ -18,7 +18,7 @@ const Home = ({ posts }: Props) => {
       <div className="p-5 px-10 xl:px-20 max-w-screen-2xl md:p-0 md:px-0 bg-white md:border-none md:grid md:m-auto md:grid-rows-1 md:grid-cols-4 md:w-auto md:h-screen">
         <Header />
 
-        {/* Posts */}
+        {/* Post */}
         <div className="pt-10 flex flex-col md:p-20 md:box md:row-span-1 md:col-span-3">
           {posts.map((post) => (
             <div>
