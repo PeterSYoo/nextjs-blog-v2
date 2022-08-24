@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import Image from 'next/image';
 import { sanityClient, urlFor } from '../sanity';
 import { Post } from '../typings';
 import Header from '../components/header.components';
@@ -33,9 +32,11 @@ const Home = ({ posts }: Props) => {
                         className="aspect-auto h-8 w-8"
                       />
                       <div className="pl-3 pt-1 flex">
-                        <div className="">{post.author.name}</div>
-                        <div className="text-xs pt-1">&nbsp;∙&nbsp;</div>
-                        <div className="text-gray-300">{post.publishedAt}</div>
+                        <div className="text-sm">{post.author.name}</div>
+                        <div className="text-xs pt-px mt-px">&nbsp;∙&nbsp;</div>
+                        <div className="text-gray-400 text-sm">
+                          {new Date(post.publishedAt).toLocaleDateString()}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -44,7 +45,7 @@ const Home = ({ posts }: Props) => {
                       {post.title}
                     </Link>
                   </div>
-                  <div className="pl-1 pt-2 pb-8 font-serif hover:scale-105 transition-transform duration-200 ease-in-out">
+                  <div className="pl-1 pt-2 pb-8 font-serif">
                     <Link key={post._id} href={`/post/${post.slug.current}`}>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -55,7 +56,7 @@ const Home = ({ posts }: Props) => {
                   </div>
                 </div>
 
-                <div className="col-span-1 p-5 pt-20 -mt-2 hover:scale-105 transition-transform duration-200 ease-in-out">
+                <div className="col-span-1 p-5 pt-20 -mt-2">
                   <Link key={post._id} href={`/post/${post.slug.current}`}>
                     <img
                       src={urlFor(post.mainImage).url()!}
@@ -70,8 +71,6 @@ const Home = ({ posts }: Props) => {
           ))}
         </div>
       </div>
-
-      <main></main>
     </>
   );
 };
