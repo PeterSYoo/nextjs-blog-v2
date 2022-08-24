@@ -2,9 +2,21 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Transition } from '@headlessui/react';
 import { IoHomeSharp, IoBriefcase, IoMailSharp } from 'react-icons/io5';
-import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose, AiOutlineHome, AiFillHome } from 'react-icons/ai';
+import {
+  HiOutlineHome,
+  HiHome,
+  HiOutlineBriefcase,
+  HiBriefcase,
+} from 'react-icons/hi';
+import {
+  RiGithubLine,
+  RiGithubFill,
+  RiLinkedinLine,
+  RiLinkedinFill,
+} from 'react-icons/ri';
+import { MdOutlineMail, MdEmail } from 'react-icons/md';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,11 +46,14 @@ const Header = () => {
               className="max-h-5"
             >
               {homeHovering ? (
-                <span className="text-2xl cursor-pointer font-bold px-10 opacity-0 hover:opacity-100 transition-opacity duration-500">
-                  HOME
-                </span>
+                <div className="flex">
+                  <span className="flex flex-col justify-center text-xl cursor-pointer font-light px-2">
+                    Home&nbsp;&nbsp;/
+                  </span>
+                  <AiFillHome className="text-3xl cursor-pointer " />
+                </div>
               ) : (
-                <IoHomeSharp className="text-3xl cursor-pointer " />
+                <AiOutlineHome className="text-3xl cursor-pointer " />
               )}
             </div>
           </Link>
@@ -56,11 +71,14 @@ const Header = () => {
                 className="max-h-5"
               >
                 {portfolioHovering ? (
-                  <span className="text-2xl cursor-pointer font-bold px-10 opacity-0 hover:opacity-100 transition-opacity duration-500 ">
-                    PORTFOLIO
-                  </span>
+                  <div className="flex">
+                    <span className="flex flex-col justify-center text-xl cursor-pointer font-light px-2">
+                      Portfolio&nbsp;&nbsp;/
+                    </span>
+                    <HiBriefcase className="text-3xl cursor-pointer" />
+                  </div>
                 ) : (
-                  <IoBriefcase className="text-3xl cursor-pointer" />
+                  <HiOutlineBriefcase className="text-3xl cursor-pointer" />
                 )}
               </div>
             </a>
@@ -79,11 +97,14 @@ const Header = () => {
                 className="max-h-5"
               >
                 {liHovering ? (
-                  <span className="text-2xl cursor-pointer font-bold px-10 opacity-0 hover:opacity-100 transition-opacity duration-500 ">
-                    LINKEDIN
-                  </span>
+                  <div className="flex">
+                    <span className="flex flex-col justify-center text-xl cursor-pointer font-light px-2">
+                      LinkedIn&nbsp;&nbsp;/
+                    </span>
+                    <RiLinkedinFill className="text-3xl cursor-pointer" />
+                  </div>
                 ) : (
-                  <SiLinkedin className="text-3xl cursor-pointer" />
+                  <RiLinkedinLine className="text-3xl cursor-pointer" />
                 )}
               </div>
             </a>
@@ -102,11 +123,14 @@ const Header = () => {
                 className="max-h-5"
               >
                 {gitHovering ? (
-                  <span className="text-2xl cursor-pointer font-bold px-10 opacity-0 hover:opacity-100 transition-opacity duration-500">
-                    GITHUB
-                  </span>
+                  <div className="flex">
+                    <span className="flex flex-col justify-center text-xl cursor-pointer font-light px-2">
+                      GitHub&nbsp;&nbsp;/
+                    </span>
+                    <RiGithubFill className="text-4xl cursor-pointer -mr-1" />
+                  </div>
                 ) : (
-                  <SiGithub className="text-3xl cursor-pointer" />
+                  <RiGithubLine className="text-4xl cursor-pointer -mr-1" />
                 )}
               </div>
             </a>
@@ -125,11 +149,14 @@ const Header = () => {
                 className="max-h-5"
               >
                 {emailHovering ? (
-                  <span className="text-2xl cursor-pointer font-bold px-10 opacity-0 hover:opacity-100 transition-opacity duration-500 ">
-                    EMAIL
-                  </span>
+                  <div className="flex">
+                    <span className="flex flex-col justify-center text-xl cursor-pointer font-light px-2">
+                      Email&nbsp;&nbsp;/
+                    </span>
+                    <MdEmail className="text-3xl cursor-pointer" />
+                  </div>
                 ) : (
-                  <IoMailSharp className="text-3xl cursor-pointer" />
+                  <MdOutlineMail className="text-3xl cursor-pointer" />
                 )}
               </div>
             </a>
