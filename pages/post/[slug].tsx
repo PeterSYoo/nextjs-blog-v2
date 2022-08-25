@@ -128,7 +128,7 @@ const Posts = ({ post }: Props) => {
                 <input
                   {...register('name', { required: true })}
                   className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
-                  placeholder="John Appleseed"
+                  placeholder="John Doe"
                   type="text"
                 />
               </label>
@@ -137,7 +137,7 @@ const Posts = ({ post }: Props) => {
                 <input
                   {...register('email', { required: true })}
                   className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
-                  placeholder="John Appleseed"
+                  placeholder="johndoe@gmail.com"
                   type="email"
                 />
               </label>
@@ -146,7 +146,7 @@ const Posts = ({ post }: Props) => {
                 <textarea
                   {...register('comment', { required: true })}
                   className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
-                  placeholder="John Appleseed"
+                  placeholder="Type something..."
                   rows={8}
                 />
               </label>
