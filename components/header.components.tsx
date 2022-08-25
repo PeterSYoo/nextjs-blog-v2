@@ -30,12 +30,7 @@ const Header = () => {
           <div className="text-xl md:text-xl font-thin">Peter Yoo</div>
         </div>
         <div className="invisible md:flex md:flex-col md:items-end md:gap-20 md:visible md:pt-20 ">
-          <Link
-            href="/"
-            activeClass="home"
-            to="home"
-            className="cursor-pointer"
-          >
+          <Link href="/" className="cursor-pointer">
             <div
               onMouseEnter={() => setHomeHovering(true)}
               onMouseLeave={() => setHomeHovering(false)}
@@ -55,8 +50,6 @@ const Header = () => {
           </Link>
           <Link
             href="https://petersyoo.netlify.app/"
-            activeClass="portfolio"
-            to="portfolio"
             className="cursor-pointer"
             passHref
           >
@@ -81,8 +74,6 @@ const Header = () => {
           </Link>
           <Link
             href="https://www.linkedin.com/in/petersyoo/"
-            activeClass="linkedin"
-            to="linkedin"
             className="cursor-pointer"
             passHref
           >
@@ -107,8 +98,6 @@ const Header = () => {
           </Link>
           <Link
             href="https://github.com/PeterSYoo"
-            activeClass="github"
-            to="github"
             className="cursor-pointer"
             passHref
           >
@@ -133,8 +122,6 @@ const Header = () => {
           </Link>
           <Link
             href="mailto:petersyoox@gmail.com"
-            activeClass="email"
-            to="email"
             className="cursor-pointer"
             passHref
           >
@@ -187,8 +174,7 @@ const Header = () => {
               <div className="flex flex-col text-right text-2xl px-2 pb-10 space-y-4 sml:px-3">
                 <Link
                   href="/"
-                  activeClass="home"
-                  to="home"
+                  // @ts-ignore
                   smooth={true}
                   offset={50}
                   duration={500}
@@ -198,8 +184,7 @@ const Header = () => {
                 </Link>
                 <Link
                   href="https://petersyoo.netlify.app/"
-                  activeClass="portfolio"
-                  to="portfolio"
+                  // @ts-ignore
                   smooth={true}
                   offset={50}
                   duration={500}
@@ -210,8 +195,7 @@ const Header = () => {
                 </Link>
                 <Link
                   href="https://www.linkedin.com/in/petersyoo/"
-                  activeClass="linkedin"
-                  to="linkedin"
+                  // @ts-ignore
                   smooth={true}
                   offset={50}
                   duration={500}
@@ -222,8 +206,7 @@ const Header = () => {
                 </Link>
                 <Link
                   href="https://github.com/PeterSYoo"
-                  activeClass="github"
-                  to="github"
+                  // @ts-ignore
                   smooth={true}
                   offset={50}
                   duration={500}
@@ -234,8 +217,7 @@ const Header = () => {
                 </Link>
                 <Link
                   href="mailto:petersyoox@gmail.com"
-                  activeClass="email"
-                  to="email"
+                  // @ts-ignore
                   smooth={true}
                   offset={50}
                   duration={500}
