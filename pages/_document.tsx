@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <title>Peter Yoo's Blog</title>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
