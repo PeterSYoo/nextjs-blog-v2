@@ -1,11 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import * as ga from '../lib/ga';
+import PropagateLoader from 'react-spinners/PropagateLoader';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const start = () => {
+      console.log('start');
+      setLoading(true);
+    };
+    const end = () => {
+      console.log('finished');
+      setLoading(false);
+    };
+    Router.events.on('routeChangeStart', start);
+    Router.events.on('routeChangeComplete', end);
+    Router.events.on('routeChangeError', end);
+    return () => {
+      Router.events.off('routeChangeStart', start);
+      Router.events.off('routeChangeComplete', end);
+      Router.events.off('routeChangeError', end);
+    };
+  }, []);
 
   useEffect(() => {
     const handleRouterChange = (url: URL) => {
@@ -24,7 +44,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <React.StrictMode>
-      <Component {...pageProps} />
+      {loading ? (
+        <div className="flex flex-col justify-center items-center h-screen">
+          <PropagateLoader />
+        </div>
+      ) : (
+        <Component {...pageProps} />
+      )}
     </React.StrictMode>
   );
 }
