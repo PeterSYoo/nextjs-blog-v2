@@ -1,15 +1,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Transition } from '@headlessui/react';
-import { IoHomeSharp, IoBriefcase, IoMailSharp } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose, AiOutlineHome, AiFillHome } from 'react-icons/ai';
-import {
-  HiOutlineHome,
-  HiHome,
-  HiOutlineBriefcase,
-  HiBriefcase,
-} from 'react-icons/hi';
+import { HiOutlineBriefcase, HiBriefcase } from 'react-icons/hi';
 import {
   RiGithubLine,
   RiGithubFill,
@@ -28,12 +22,14 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center md:flex-col md:items-end md:text-right md:justify-start md:p-5 md:pt-20 md:box md:col-span-1 md:row-span-2 md:border-r">
+      <div className="flex justify-between items-center -ml-20 md:flex-col md:items-end md:text-right md:justify-start md:p-5 md:pt-20 md:box md:col-span-1 md:row-span-2 md:border-r md:w-40 md:h-screen md:fixed">
         <div className="text-2xl md:text-4xl font-bold">
-          Hi! <span>👋</span>
-          <div className="text-2xl md:text-4xl font-bold">I'm Peter</div>
+          <Link href="/" className="cursor-pointer">
+            Blog
+          </Link>
+          <div className="text-xl md:text-xl font-thin">Peter Yoo</div>
         </div>
-        <div className="invisible md:flex md:flex-col md:items-end md:gap-20 md:visible md:pt-20">
+        <div className="invisible md:flex md:flex-col md:items-end md:gap-20 md:visible md:pt-20 ">
           <Link
             href="/"
             activeClass="home"
@@ -163,7 +159,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <span className="text-3xl cursor-pointer md:hidden block">
+        <span className="flex flex-col text-3xl cursor-pointer items-end md:hidden">
           <button
             aria-controls="mobile-menu"
             aria-expanded="false"
@@ -175,82 +171,84 @@ const Header = () => {
         </span>
       </div>
 
-      <Transition
-        show={isOpen}
-        enter="transition ease-out duration-100 transform"
-        enterFrom="opacity-0 scale-95"
-        enterTo="opacity-100 scale-100 md:hidden"
-        leave="transition ease-in duration-75 transform"
-        leaveFrom="opacity-100 scale-100 md:hidden"
-        leaveTo="opacity-0 scale-95"
-      >
-        {(ref) => (
-          // handle the mobile menu tabs
-          <div className="md:hidden id=mobile-menu flex justify-end">
-            <div className="flex border-b w-full bg-white flex-col text-right text-2xl px-2 pb-10 space-y-4 sml:px-3">
-              <Link
-                href="/"
-                activeClass="home"
-                to="home"
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="cursor-pointer"
-              >
-                Home
-              </Link>
-              <Link
-                href="https://petersyoo.netlify.app/"
-                activeClass="portfolio"
-                to="portfolio"
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="cursor-pointer"
-                passHref
-              >
-                <a target="_blank">Portfolio</a>
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/petersyoo/"
-                activeClass="linkedin"
-                to="linkedin"
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="cursor-pointer"
-                passHref
-              >
-                <a target="_blank">LinkedIn</a>
-              </Link>
-              <Link
-                href="https://github.com/PeterSYoo"
-                activeClass="github"
-                to="github"
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="cursor-pointer"
-                passHref
-              >
-                <a target="_blank">GitHub</a>
-              </Link>
-              <Link
-                href="mailto:petersyoox@gmail.com"
-                activeClass="email"
-                to="email"
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="cursor-pointer"
-                passHref
-              >
-                <a target="_blank">Email</a>
-              </Link>
+      <div className="border-b -ml-20">
+        <Transition
+          show={isOpen}
+          enter="transition ease-out duration-100 transform"
+          enterFrom="opacity-0 scale-95"
+          enterTo="opacity-100 scale-100 md:hidden"
+          leave="transition ease-in duration-75 transform"
+          leaveFrom="opacity-100 scale-100 md:hidden"
+          leaveTo="opacity-0 scale-95"
+        >
+          {(ref) => (
+            // handle the mobile menu tabs
+            <div className="md:hidden id=mobile-menu flex justify-end">
+              <div className="flex flex-col text-right text-2xl px-2 pb-10 space-y-4 sml:px-3">
+                <Link
+                  href="/"
+                  activeClass="home"
+                  to="home"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="https://petersyoo.netlify.app/"
+                  activeClass="portfolio"
+                  to="portfolio"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer"
+                  passHref
+                >
+                  <a target="_blank">Portfolio</a>
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/petersyoo/"
+                  activeClass="linkedin"
+                  to="linkedin"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer"
+                  passHref
+                >
+                  <a target="_blank">LinkedIn</a>
+                </Link>
+                <Link
+                  href="https://github.com/PeterSYoo"
+                  activeClass="github"
+                  to="github"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer"
+                  passHref
+                >
+                  <a target="_blank">GitHub</a>
+                </Link>
+                <Link
+                  href="mailto:petersyoox@gmail.com"
+                  activeClass="email"
+                  to="email"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer"
+                  passHref
+                >
+                  <a target="_blank">Email</a>
+                </Link>
+              </div>
             </div>
-          </div>
-        )}
-      </Transition>
+          )}
+        </Transition>
+      </div>
     </>
   );
 };
