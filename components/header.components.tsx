@@ -146,7 +146,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <span className="flex flex-col text-3xl cursor-pointer items-end md:hidden">
+        <span className="flex flex-col text-3xl -mr-2 cursor-pointer md:hidden">
           <button
             aria-controls="mobile-menu"
             aria-expanded="false"
@@ -158,7 +158,7 @@ const Header = () => {
         </span>
       </div>
 
-      <div className="border-b -ml-20">
+      <div className="border-b -ml-20 -mr-2">
         <Transition
           show={isOpen}
           enter="transition ease-out duration-100 transform"

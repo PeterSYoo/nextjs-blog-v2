@@ -21,7 +21,7 @@ const Home = ({ posts }: Props) => {
         </div>
 
         {/* Post */}
-        <div className="pt-10 flex flex-col md:-ml-10 md:p-14 md:box md:row-span-1 md:col-span-3">
+        <div className="pt-10 flex flex-col mr-20 md:-ml-10 md:p-14 md:box md:row-span-1 md:col-span-3">
           {posts.map((post) => (
             <div>
               <div className="grid grid-cols-6">
