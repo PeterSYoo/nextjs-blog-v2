@@ -68,7 +68,7 @@ const Posts = ({ post }: Props) => {
           <div className="pl-1 pt-8 text-3xl font-bold">{post.title}</div>
           <div className="pl-1 pt-6 pb-10 font-serif text-xl font-thin leading-9">
             <PortableText
-              className="flex flex-col items-center"
+              className="flex flex-col"
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
               content={post.body}
