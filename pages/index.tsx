@@ -15,11 +15,13 @@ const Home = ({ posts }: Props) => {
         <title>Peter Yoo's Blog</title>
       </Head>
 
-      <div className="p-5 px-10 xl:px-20 max-w-screen-2xl md:p-0 md:px-0 bg-white md:border-none md:grid md:m-auto md:grid-rows-1 md:grid-cols-4 md:w-auto md:h-screen">
-        <Header />
+      <div className="p-5 px-10 xl:px-20 max-w-screen-2xl md:p-0 md:px-0 bg-white md:border-none md:grid md:m-auto md:grid-rows-1 md:grid-cols-4 md:w-auto md:h-screen md:overflow-x-hidden">
+        <div className="md:col-span-1 pl-20">
+          <Header />
+        </div>
 
         {/* Post */}
-        <div className="pt-10 flex flex-col md:p-20 md:box md:row-span-1 md:col-span-3">
+        <div className="pt-10 flex flex-col md:-ml-10 md:p-14 md:box md:row-span-1 md:col-span-3">
           {posts.map((post) => (
             <div>
               <div className="grid grid-cols-6">

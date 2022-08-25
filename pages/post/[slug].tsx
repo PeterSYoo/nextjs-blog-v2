@@ -47,7 +47,7 @@ const Posts = ({ post }: Props) => {
         <Header />
       </div>
 
-      <article className="pt-10 flex flex-col md:p-20 md:box md:row-span-1 md:col-span-3 items-center">
+      <article className="pt-10 flex flex-col md:-ml-10 md:p-10 md:box md:row-span-1 md:col-span-3 items-center">
         {/* Start Post */}
         <div className="flex flex-col">
           <div className="flex justify-between pt-5">
@@ -68,7 +68,7 @@ const Posts = ({ post }: Props) => {
           <div className="pl-1 pt-8 text-3xl font-bold">{post.title}</div>
           <div className="pl-1 pt-6 pb-10 font-serif text-xl font-thin leading-9">
             <PortableText
-              className=""
+              className="flex flex-col items-center"
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
               content={post.body}
@@ -99,11 +99,11 @@ const Posts = ({ post }: Props) => {
           <span className="">•</span>
         </div>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center w-full pb-40">
           {submitted ? (
-            <div className="flex flex-col p-10 my-10 bg-yellow-500 text-white max-w-2xl mx-auto">
+            <div className="flex flex-col p-10 my-10 bg-gray-400 text-white max-w-2xl mx-auto">
               <h3 className="text-3xl font-bold">
-                Thank you for submitted your comment!
+                Thank you for submitting your comment!
               </h3>
               <p>Once it has been approved, it will appear below!</p>
             </div>
@@ -185,13 +185,13 @@ const Posts = ({ post }: Props) => {
 
           {/* Comments */}
           <div className="flex flex-col p-10 my-10 max-w-2xl w-full shadow-gray-500 border">
-            <h3 className="text-4xl">Comments</h3>
-            <hr className="pb-2" />
+            <h4 className="text-3xl pb-2 font-bold">Comments</h4>
+            <hr className=" pb-4" />
 
             {post.comments.map((comment) => (
               <div key={comment._id}>
                 <p>
-                  <span className="text-yellow-500">{comment.name}: </span>
+                  <span className="text-gray-400">{comment.name}: </span>
                   {comment.comment}
                 </p>
               </div>
