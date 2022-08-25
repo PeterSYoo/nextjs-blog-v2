@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { sanityClient, urlFor } from '../sanity';
 import { Post } from '../typings';
 import Header from '../components/header.components';
+import PortableText from 'react-portable-text';
 
 interface Props {
   posts: [Post];
@@ -49,11 +50,7 @@ const Home = ({ posts }: Props) => {
                   </div>
                   <div className="pl-1 pt-2 pb-8 font-serif">
                     <Link key={post._id} href={`/post/${post.slug.current}`}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Enim nunc faucibus a pellentesque. Quis imperdiet
-                      massa tincidunt nunc pulvinar sapien et ligula
-                      ullamcorper. Ipsum dolor sit amet consectetu...
+                      {post.description}
                     </Link>
                   </div>
                 </div>
