@@ -158,7 +158,7 @@ const Header = () => {
         </span>
       </div>
 
-      <div className="border-b -ml-20">
+      <div className="border-b -ml-40 -mr-10">
         <Transition
           show={isOpen}
           enter="transition ease-out duration-100 transform"
@@ -170,7 +170,7 @@ const Header = () => {
         >
           {(ref) => (
             // handle the mobile menu tabs
-            <div className="md:hidden id=mobile-menu flex justify-end">
+            <div className="md:hidden id=mobile-menu flex justify-end mr-9">
               <div className="flex flex-col text-right text-2xl px-2 pb-10 space-y-4 sml:px-3">
                 <Link
                   href="/"

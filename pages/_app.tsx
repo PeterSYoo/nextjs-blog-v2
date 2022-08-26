@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 import Router, { useRouter } from 'next/router';
 import * as ga from '../lib/ga';
 import PropagateLoader from 'react-spinners/PropagateLoader';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -49,7 +50,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           <PropagateLoader />
         </div>
       ) : (
-        <Component {...pageProps} />
+        <>
+          <Head>
+            <title>Peter Yoo's Blog</title>
+          </Head>
+          <Component {...pageProps} />
+        </>
       )}
     </React.StrictMode>
   );
