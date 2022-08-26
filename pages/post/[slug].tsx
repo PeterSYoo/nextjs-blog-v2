@@ -83,7 +83,7 @@ const Posts = ({ post }: Props) => {
                   <li className="ml-4 list-disc">{children}</li>
                 ),
                 link: ({ href, children }: any) => (
-                  <a href={href} className="text-gray-500 hover:underline">
+                  <a href={href} className="text-gray-400 hover:underline">
                     {children}
                   </a>
                 ),
