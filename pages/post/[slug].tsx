@@ -86,7 +86,7 @@ const Posts = ({ post }: Props) => {
                   link: ({ href, children }: any) => (
                     <a
                       href={href}
-                      className="text-gray-300 text-sm hover:underline"
+                      className="text-gray-500 text-sm hover:underline"
                     >
                       {children}
                     </a>
