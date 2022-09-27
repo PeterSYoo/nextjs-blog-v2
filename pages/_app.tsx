@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <React.StrictMode>
       {loading ? (
-        <div className="flex flex-col justify-center items-center h-screen">
+        <div className="flex flex-col justify-center items-center min-h-screen min-w-screen bg-gray-100">
           <PropagateLoader />
         </div>
       ) : (
