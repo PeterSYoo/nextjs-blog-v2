@@ -22,14 +22,13 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center -ml-20 md:flex-col md:items-end md:text-right md:justify-start md:p-5 md:pt-20 md:box md:col-span-1 md:row-span-2 md:border-r md:w-40 md:h-screen md:fixed">
-        <div className="text-2xl md:text-4xl font-bold">
+      <div className="flex justify-between items-center -ml-20 md:flex-col md:items-end md:text-right md:justify-start md:p-5 md:pt-20 md:box md:col-span-1 md:row-span-2 md:border-r md:w-40 md:h-screen md:fixed md:border-gray-200">
+        <div className="md:text-center text-2xl md:text-2xl font-bold p-2 shadow-sm shadow-gray-300 rounded-md hover:bg-gray-900 transition-all duration-100 ease-linear hover:text-white hover:shadow-lg hover:shadow-gray-900">
           <Link href="/" className="cursor-pointer">
             Blog
           </Link>
-          <div className="text-xl md:text-xl font-thin">Peter Yoo</div>
         </div>
-        <div className="invisible md:flex md:flex-col md:items-end md:gap-20 md:visible md:pt-20 ">
+        <div className="invisible md:flex md:flex-col md:items-end md:gap-20 md:visible md:pt-10 ">
           <Link href="/" className="cursor-pointer">
             <div
               onMouseEnter={() => setHomeHovering(true)}
@@ -37,14 +36,21 @@ const Header = () => {
               className="max-h-5"
             >
               {homeHovering ? (
-                <div className="flex">
-                  <span className="flex flex-col justify-center text-xl cursor-pointer font-light px-2">
-                    Home&nbsp;&nbsp;/
-                  </span>
+                <div className="sidebar-icon group">
                   <AiFillHome className="text-3xl cursor-pointer " />
+                  <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
+                  <span className="sidebar-tooltip group-hover:scale-100">
+                    Home
+                  </span>
                 </div>
               ) : (
-                <AiOutlineHome className="text-3xl cursor-pointer " />
+                <div className="sidebar-icon group">
+                  <AiOutlineHome className="text-3xl cursor-pointer " />
+                  <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
+                  <span className="sidebar-tooltip group-hover:scale-100">
+                    Home
+                  </span>
+                </div>
               )}
             </div>
           </Link>
@@ -60,14 +66,21 @@ const Header = () => {
                 className="max-h-5"
               >
                 {portfolioHovering ? (
-                  <div className="flex">
-                    <span className="flex flex-col justify-center text-xl cursor-pointer font-light px-2">
-                      Portfolio&nbsp;&nbsp;/
+                  <div className="sidebar-icon group">
+                    <HiBriefcase className="text-3xl" />
+                    <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
+                    <span className="sidebar-tooltip group-hover:scale-100">
+                      Portfolio
                     </span>
-                    <HiBriefcase className="text-3xl cursor-pointer" />
                   </div>
                 ) : (
-                  <HiOutlineBriefcase className="text-3xl cursor-pointer" />
+                  <div className="sidebar-icon">
+                    <HiOutlineBriefcase className="text-3xl cursor-pointer" />
+                    <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
+                    <span className="sidebar-tooltip group-hover:scale-100">
+                      Portfolio
+                    </span>
+                  </div>
                 )}
               </div>
             </a>
@@ -84,14 +97,21 @@ const Header = () => {
                 className="max-h-5"
               >
                 {liHovering ? (
-                  <div className="flex">
-                    <span className="flex flex-col justify-center text-xl cursor-pointer font-light px-2">
-                      LinkedIn&nbsp;&nbsp;/
-                    </span>
+                  <div className="sidebar-icon group">
                     <RiLinkedinFill className="text-3xl cursor-pointer" />
+                    <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
+                    <span className="sidebar-tooltip group-hover:scale-100">
+                      LinkedIn
+                    </span>
                   </div>
                 ) : (
-                  <RiLinkedinLine className="text-3xl cursor-pointer" />
+                  <div className="sidebar-icon group">
+                    <RiLinkedinLine className="text-3xl cursor-pointer" />
+                    <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
+                    <span className="sidebar-tooltip group-hover:scale-100">
+                      LinkedIn
+                    </span>
+                  </div>
                 )}
               </div>
             </a>
@@ -108,14 +128,21 @@ const Header = () => {
                 className="max-h-5"
               >
                 {gitHovering ? (
-                  <div className="flex">
-                    <span className="flex flex-col justify-center text-xl cursor-pointer font-light px-2">
-                      GitHub&nbsp;&nbsp;/
+                  <div className="sidebar-icon group">
+                    <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
+                    <span className="sidebar-tooltip group-hover:scale-100">
+                      GitHub
                     </span>
-                    <RiGithubFill className="text-4xl cursor-pointer -mr-1" />
+                    <RiGithubFill className="text-4xl cursor-pointer" />
                   </div>
                 ) : (
-                  <RiGithubLine className="text-4xl cursor-pointer -mr-1" />
+                  <div className="sidebar-icon group">
+                    <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
+                    <span className="sidebar-tooltip group-hover:scale-100">
+                      GitHub
+                    </span>
+                    <RiGithubLine className="text-4xl cursor-pointer" />
+                  </div>
                 )}
               </div>
             </a>
@@ -132,14 +159,21 @@ const Header = () => {
                 className="max-h-5"
               >
                 {emailHovering ? (
-                  <div className="flex">
-                    <span className="flex flex-col justify-center text-xl cursor-pointer font-light px-2">
-                      Email&nbsp;&nbsp;/
-                    </span>
+                  <div className="sidebar-icon group">
                     <MdEmail className="text-3xl cursor-pointer" />
+                    <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
+                    <span className="sidebar-tooltip group-hover:scale-100">
+                      Email
+                    </span>
                   </div>
                 ) : (
-                  <MdOutlineMail className="text-3xl cursor-pointer" />
+                  <div className="sidebar-icon group">
+                    <MdOutlineMail className="text-3xl cursor-pointer" />
+                    <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
+                    <span className="sidebar-tooltip group-hover:scale-100">
+                      Email
+                    </span>
+                  </div>
                 )}
               </div>
             </a>
@@ -158,7 +192,7 @@ const Header = () => {
         </span>
       </div>
 
-      <div className="border-b -ml-40 -mr-10">
+      <div className="border-b border-gray-200 -ml-40 -mr-10">
         <Transition
           show={isOpen}
           enter="transition ease-out duration-100 transform"

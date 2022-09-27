@@ -42,140 +42,57 @@ const Posts = ({ post }: Props) => {
   };
 
   return (
-    <div className="p-5 px-10 xl:px-20 max-w-screen-2xl md:p-0 md:px-0 bg-white md:border-none md:grid md:m-auto md:grid-rows-1 md:grid-cols-4 md:w-auto md:h-screen">
-      <div className="md:col-span-1 pl-20">
-        <Header />
-      </div>
+    <section className="min-h-screen min-w-screen bg-gray-100">
+      <div className="p-5 px-10 xl:px-20 max-w-screen-2xl md:p-0 md:px-0 md:border-none md:grid md:m-auto md:grid-rows-1 md:grid-cols-4">
+        <div className="md:col-span-1 pl-20">
+          <Header />
+        </div>
 
-      <article className="pt-10 flex flex-col md:-ml-10 md:p-10 md:box md:row-span-1 md:col-span-3 items-center">
-        {/* Start Post */}
-        <div className="flex flex-col">
-          <div className="flex justify-between pt-5">
-            <div className="flex">
-              <img
-                src={urlFor(post.author.image).url()!}
-                alt=""
-                className="aspect-auto h-12 w-12"
-              />
-              <div className="pl-4 -mt-1 flex flex-col justify-between">
-                <div className="">{post.author.name}</div>
-                <div className="text-gray-400 text-sm">
-                  {new Date(post.publishedAt).toDateString()}
+        <article className="pt-10 flex flex-col md:-ml-10 md:p-10 md:box md:row-span-1 md:col-span-3 items-center">
+          {/* Start Post */}
+          <div className="flex flex-col">
+            <div className="flex justify-between pt-5">
+              <div className="flex">
+                <img
+                  src={urlFor(post.author.image).url()!}
+                  alt=""
+                  className="aspect-auto h-12 w-12"
+                />
+                <div className="pl-4 -mt-1 flex flex-col justify-between">
+                  <div className="">{post.author.name}</div>
+                  <div className="text-gray-400 text-sm">
+                    {new Date(post.publishedAt).toDateString()}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="pl-1 pt-8 text-3xl font-bold">{post.title}</div>
-          <div className="pl-1 pt-6 pb-10 font-serif text-xl font-thin leading-9">
-            <PortableText
-              className="flex flex-col"
-              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
-              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-              content={post.body}
-              serializers={{
-                h1: (props: any) => (
-                  <h1 className="text-2xl font-bold my-5" {...props} />
-                ),
-                h2: (props: any) => (
-                  <h2 className="text-xl font-bold my-5" {...props} />
-                ),
-                li: ({ children }: any) => (
-                  <li className="ml-4 list-disc">{children}</li>
-                ),
-                link: ({ href, children }: any) => (
-                  <a href={href} className="text-gray-400 hover:underline">
-                    {children}
-                  </a>
-                ),
-              }}
-            />
-          </div>
-        </div>
-        {/* End Post */}
-
-        <div className="flex justify-center gap-8 pb-10">
-          <span className="">•</span>
-          <span className="">•</span>
-          <span className="">•</span>
-        </div>
-
-        <div className="flex flex-col items-center w-full pb-40">
-          {submitted ? (
-            <div className="flex flex-col p-10 my-10 bg-gray-400 text-white max-w-2xl mx-auto">
-              <h3 className="text-3xl font-bold">
-                Thank you for submitting your comment!
-              </h3>
-              <p>Once it has been approved, it will appear below!</p>
+            <div className="pl-1 pt-8 text-3xl font-bold">{post.title}</div>
+            <div className="pl-1 pt-6 pb-10 font-serif text-xl font-thin leading-9">
+              <PortableText
+                className="flex flex-col"
+                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+                content={post.body}
+                serializers={{
+                  h1: (props: any) => (
+                    <h1 className="text-2xl font-bold my-5" {...props} />
+                  ),
+                  h2: (props: any) => (
+                    <h2 className="text-xl font-bold my-5" {...props} />
+                  ),
+                  li: ({ children }: any) => (
+                    <li className="ml-4 list-disc">{children}</li>
+                  ),
+                  link: ({ href, children }: any) => (
+                    <a href={href} className="text-gray-400 hover:underline">
+                      {children}
+                    </a>
+                  ),
+                }}
+              />
             </div>
-          ) : (
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className="flex flex-col p-5 max-w-2xl mb-10 w-full"
-            >
-              <h3 className="text-sm text-gray-500">Enjoyed this post?</h3>
-              <h4 className="text-3xl font-bold">Leave a comment below!</h4>
-              <hr className="py-3 mt-2" />
-
-              <input
-                {...register('_id')}
-                type="hidden"
-                name="_id"
-                value={post._id}
-              />
-
-              <label className="block mb-5">
-                <span className="text-gray-700">Name</span>
-                <input
-                  {...register('name', { required: true })}
-                  className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
-                  placeholder="John Doe"
-                  type="text"
-                />
-              </label>
-              <label className="block mb-5">
-                <span className="text-gray-700">Email</span>
-                <input
-                  {...register('email', { required: true })}
-                  className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
-                  placeholder="johndoe@gmail.com"
-                  type="email"
-                />
-              </label>
-              <label className="block mb-5">
-                <span className="text-gray-700">Comment</span>
-                <textarea
-                  {...register('comment', { required: true })}
-                  className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
-                  placeholder="Type something..."
-                  rows={8}
-                />
-              </label>
-
-              {/* Errors when field validation fails */}
-              <div className="flex flex-col p-5">
-                {errors.name && (
-                  <span className="text-red-500">
-                    - The Name Field is required
-                  </span>
-                )}
-                {errors.comment && (
-                  <span className="text-red-500">
-                    - The Comment Field is required
-                  </span>
-                )}
-                {errors.email && (
-                  <span className="text-red-500">
-                    - The Email Field is required
-                  </span>
-                )}
-              </div>
-
-              <input
-                type="submit"
-                className="shadow border hover:border-gray-500 hover:border focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded cursor-pointer"
-              />
-            </form>
-          )}
+          </div>
+          {/* End Post */}
 
           <div className="flex justify-center gap-8 pb-10">
             <span className="">•</span>
@@ -183,23 +100,108 @@ const Posts = ({ post }: Props) => {
             <span className="">•</span>
           </div>
 
-          {/* Comments */}
-          <div className="flex flex-col p-10 my-10 max-w-2xl w-full shadow-gray-500 border">
-            <h4 className="text-3xl pb-2 font-bold">Comments</h4>
-            <hr className=" pb-4" />
-
-            {post.comments.map((comment) => (
-              <div key={comment._id}>
-                <p>
-                  <span className="text-gray-400">{comment.name}: </span>
-                  {comment.comment}
-                </p>
+          <div className="flex flex-col items-center w-full pb-40">
+            {submitted ? (
+              <div className="flex flex-col p-10 my-10 bg-gray-400 text-white max-w-2xl mx-auto">
+                <h3 className="text-3xl font-bold">
+                  Thank you for submitting your comment!
+                </h3>
+                <p>Once it has been approved, it will appear below!</p>
               </div>
-            ))}
+            ) : (
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="flex flex-col p-5 max-w-2xl mb-10 w-full"
+              >
+                <h3 className="text-sm text-gray-500">Enjoyed this post?</h3>
+                <h4 className="text-3xl font-bold">Leave a comment below!</h4>
+                <hr className="py-3 mt-2" />
+
+                <input
+                  {...register('_id')}
+                  type="hidden"
+                  name="_id"
+                  value={post._id}
+                />
+
+                <label className="block mb-5">
+                  <span className="text-gray-700">Name</span>
+                  <input
+                    {...register('name', { required: true })}
+                    className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
+                    placeholder="John Doe"
+                    type="text"
+                  />
+                </label>
+                <label className="block mb-5">
+                  <span className="text-gray-700">Email</span>
+                  <input
+                    {...register('email', { required: true })}
+                    className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
+                    placeholder="johndoe@gmail.com"
+                    type="email"
+                  />
+                </label>
+                <label className="block mb-5">
+                  <span className="text-gray-700">Comment</span>
+                  <textarea
+                    {...register('comment', { required: true })}
+                    className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
+                    placeholder="Type something..."
+                    rows={8}
+                  />
+                </label>
+
+                {/* Errors when field validation fails */}
+                <div className="flex flex-col p-5">
+                  {errors.name && (
+                    <span className="text-red-500">
+                      - The Name Field is required
+                    </span>
+                  )}
+                  {errors.comment && (
+                    <span className="text-red-500">
+                      - The Comment Field is required
+                    </span>
+                  )}
+                  {errors.email && (
+                    <span className="text-red-500">
+                      - The Email Field is required
+                    </span>
+                  )}
+                </div>
+
+                <input
+                  type="submit"
+                  className="shadow border hover:border-gray-500 hover:border focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded cursor-pointer"
+                />
+              </form>
+            )}
+
+            <div className="flex justify-center gap-8 pb-10">
+              <span className="">•</span>
+              <span className="">•</span>
+              <span className="">•</span>
+            </div>
+
+            {/* Comments */}
+            <div className="flex flex-col p-10 my-10 max-w-2xl w-full shadow-gray-500 border">
+              <h4 className="text-3xl pb-2 font-bold">Comments</h4>
+              <hr className=" pb-4" />
+
+              {post.comments.map((comment) => (
+                <div key={comment._id}>
+                  <p>
+                    <span className="text-gray-400">{comment.name}: </span>
+                    {comment.comment}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </article>
-    </div>
+        </article>
+      </div>
+    </section>
   );
 };
 
