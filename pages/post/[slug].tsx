@@ -43,15 +43,15 @@ const Posts = ({ post }: Props) => {
 
   return (
     <section className="min-h-screen min-w-screen bg-gray-100">
-      <div className="p-5 px-10 xl:px-20 md:p-0 md:px-0 md:border-none md:grid md:m-auto md:grid-rows-1 md:grid-cols-4">
-        <div className="md:col-span-1 pl-20">
+      <div className="max-w-screen-[375px] px-10 md:max-w-screen-2xl md:mx-auto md:grid md:grid-rows-1 md:grid-cols-4">
+        <div className="md:col-start-1 md:col-span-1 pl-20">
           <Header />
         </div>
 
-        <article className="pt-10 flex flex-col md:-ml-10 md:p-10 md:box md:row-span-1 md:col-span-3 items-center">
-          {/* Start Post */}
+        {/* Start Post */}
+        <article className="md:col-start-2 md:col-span-3">
           <div className="flex flex-col">
-            <div className="flex justify-between pt-5">
+            <div className="flex justify-between pt-10">
               <div className="flex">
                 <img
                   src={urlFor(post.author.image).url()!}
@@ -84,7 +84,10 @@ const Posts = ({ post }: Props) => {
                     <li className="ml-4 list-disc">{children}</li>
                   ),
                   link: ({ href, children }: any) => (
-                    <a href={href} className="text-gray-400 hover:underline">
+                    <a
+                      href={href}
+                      className="text-gray-300 text-sm hover:underline"
+                    >
                       {children}
                     </a>
                   ),

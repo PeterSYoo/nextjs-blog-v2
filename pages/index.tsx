@@ -17,12 +17,12 @@ const Home = ({ posts }: Props) => {
       </Head>
       <section className="min-w-screen bg-gray-100 min-h-screen ">
         <div className="p-5 px-10 xl:px-20 max-w-screen-2xl md:p-0 md:px-0 md:border-none md:grid md:m-auto md:grid-rows-1 md:grid-cols-4 md:overflow-x-hidden">
-          <div className="md:col-span-1 pl-20 ">
+          <div className="md:col-start-1 md:col-span-1 pl-20 ">
             <Header />
           </div>
 
           {/* Post */}
-          <div className="pt-10 pr-20 mx-auto flex flex-col mr-20 md:-ml-10 md:p-14 md:box md:row-span-1 md:col-span-3 h-full w-full">
+          <div className="pt-10 pr-20 mx-auto flex flex-col mr-20 md:-ml-10 md:p-14 md:box md:row-span-1 md:col-start-2 md:col-span-3 h-full w-full">
             {posts.map((post) => (
               <div>
                 <div className="grid grid-cols-6">
