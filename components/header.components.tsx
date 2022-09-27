@@ -30,7 +30,7 @@ const Header = () => {
           </span>
           <Link href="/">Blog</Link>
         </div>
-        <div className="invisible md:flex md:flex-col md:items-end md:gap-20 md:visible md:pt-10 ">
+        <div className="md:flex md:flex-col md:items-end md:gap-20 md:pt-10 invisible md:visible">
           {/* <Link href="/" className="cursor-pointer">
             <div
               onMouseEnter={() => setHomeHovering(true)}
