@@ -5,6 +5,7 @@ import Router, { useRouter } from 'next/router';
 import * as ga from '../lib/ga';
 import PropagateLoader from 'react-spinners/PropagateLoader';
 import Head from 'next/head';
+import '../styles/App.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -42,6 +43,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off('routeChangeComplete', handleRouterChange);
     };
   }, [router.events]);
+
+  useEffect(() => {
+    document.body.className = pageProps.isDark ? 'dark' : 'light';
+  });
 
   return (
     <React.StrictMode>

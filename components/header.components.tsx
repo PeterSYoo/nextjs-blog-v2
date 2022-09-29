@@ -1,20 +1,19 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import { Transition } from '@headlessui/react';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { AiOutlineClose, AiOutlineHome, AiFillHome } from 'react-icons/ai';
-import { HiOutlineBriefcase, HiBriefcase } from 'react-icons/hi';
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Transition } from "@headlessui/react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
+import { HiOutlineBriefcase, HiBriefcase } from "react-icons/hi";
 import {
   RiGithubLine,
   RiGithubFill,
   RiLinkedinLine,
   RiLinkedinFill,
-} from 'react-icons/ri';
-import { MdOutlineMail, MdEmail } from 'react-icons/md';
+} from "react-icons/ri";
+import { MdOutlineMail, MdEmail } from "react-icons/md";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [homeHovering, setHomeHovering] = useState(false);
   const [portfolioHovering, setPortfolioHovering] = useState(false);
   const [liHovering, setLiHovering] = useState(false);
   const [gitHovering, setGitHovering] = useState(false);
@@ -23,13 +22,15 @@ const Header = () => {
   return (
     <>
       <div className="flex justify-between items-center -ml-20 md:flex-col md:items-end md:text-right md:justify-start md:p-5 md:pt-8 md:box md:col-span-1 md:row-span-2 md:border-r md:w-40 md:h-screen md:fixed md:border-gray-200">
-        <div className="md:text-center text-2xl md:text-2xl font-bold p-2 shadow-sm shadow-gray-900 rounded hover:bg-gray-900 transition-all duration-100 ease-linear hover:text-white hover:shadow-lg hover:shadow-gray-900 hover:rounded group cursor-pointer">
-          <span className="sidebar-tooltip-left-triangle group-hover:scale-100 left-[115px] md:left-[145px]"></span>
-          <span className="sidebar-tooltip group-hover:scale-100 left-[115px] -mt-[1px] md:left-[145px] md:-mt-[1px]">
-            Home
-          </span>
-          <Link href="/">Blog</Link>
-        </div>
+        <Link href="/">
+          <div className="md:text-center text-2xl md:text-2xl font-bold p-2 shadow-sm shadow-gray-900 rounded hover:bg-gray-900 transition-all duration-100 ease-linear hover:text-white hover:shadow-lg hover:shadow-gray-900 hover:rounded group cursor-pointer">
+            <span className="sidebar-tooltip-left-triangle group-hover:scale-100 left-[115px] md:left-[145px]"></span>
+            <span className="sidebar-tooltip group-hover:scale-100 left-[115px] -mt-[1px] md:left-[145px] md:-mt-[1px]">
+              Home
+            </span>
+            Blog
+          </div>
+        </Link>
         <div className="md:flex md:flex-col md:items-end md:gap-20 md:pt-40 invisible md:visible">
           {/* <Link href="/" className="cursor-pointer">
             <div
