@@ -23,7 +23,7 @@ const Header = () => {
     <>
       <div className="flex justify-between items-center -ml-20 md:flex-col md:items-end md:text-right md:justify-start md:p-5 md:pt-8 md:box md:col-span-1 md:row-span-2 md:border-r md:w-40 md:h-screen md:fixed md:border-gray-200">
         <Link href="/">
-          <div className="md:text-center text-2xl md:text-2xl font-bold p-2 shadow-sm shadow-gray-900 rounded hover:bg-gray-900 transition-all duration-100 ease-linear hover:text-white hover:shadow-lg hover:shadow-gray-900 hover:rounded group cursor-pointer">
+          <div className="md:text-center text-2xl md:text-2xl font-bold p-2 shadow-sm shadow-gray-900 rounded bg-gray-900 text-white md:bg-gray-100 md:text-gray-900 hover:bg-gray-900 transition-all duration-100 ease-linear hover:text-white hover:shadow-lg hover:shadow-gray-900 hover:rounded group cursor-pointer">
             <span className="sidebar-tooltip-left-triangle group-hover:scale-100 left-[115px] md:left-[145px]"></span>
             <span className="sidebar-tooltip group-hover:scale-100 left-[115px] -mt-[1px] md:left-[145px] md:-mt-[1px]">
               Home
