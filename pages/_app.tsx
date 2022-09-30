@@ -44,15 +44,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
   }, [router.events]);
 
-  useEffect(() => {
-    document.body.className = pageProps.isDark ? "dark" : "light";
-  });
-
   return (
     <React.StrictMode>
-      <ThemeProvider>
+      <ThemeProvider attribute="class">
         {loading ? (
-          <div className="flex flex-col justify-center items-center min-h-screen min-w-screen bg-gray-100">
+          <div className="flex flex-col justify-center items-center min-h-screen min-w-screen">
             <PropagateLoader />
           </div>
         ) : (

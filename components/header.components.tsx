@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Transition } from "@headlessui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -11,6 +11,7 @@ import {
   RiLinkedinFill,
 } from "react-icons/ri";
 import { MdOutlineMail, MdEmail } from "react-icons/md";
+import ThemeButton from "./themeButton.components";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,13 @@ const Header = () => {
 
   return (
     <>
+      <div className="md:hidden flex w-full justify-end pr-1 -mb-6">
+        <ThemeButton />
+      </div>
       <div className="flex justify-between items-center -ml-20 md:flex-col md:items-end md:text-right md:justify-start md:p-5 md:pt-8 md:box md:col-span-1 md:row-span-2 md:border-r dark:md:border-gray-800 md:w-40 md:h-screen md:fixed md:border-gray-200">
+        <div className="hidden md:flex md:mb-5 md:pr-[22px]">
+          <ThemeButton />
+        </div>
         <Link href="/">
           <div className="md:text-center text-2xl md:text-2xl font-bold p-2 shadow-sm shadow-gray-900 dark:shadow-blue-300 rounded bg-gray-900 text-white md:bg-gray-100 dark:md:bg-gray-900 md:text-gray-900 dark:md:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-100 transition-all duration-100 ease-linear hover:text-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-gray-900 dark:hover:shadow-blue-300 hover:rounded group cursor-pointer">
             <span className="sidebar-tooltip-left-triangle group-hover:scale-100 left-[115px] md:left-[145px]"></span>

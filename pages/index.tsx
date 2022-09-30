@@ -67,7 +67,7 @@ const Home = ({ posts }: Props) => {
                     </Link>
                   </div>
                 </div>
-                <div className="border-b border-gray-200 -mr-20 md:-mr-5"></div>
+                <div className="border-b border-gray-200 dark:border-gray-800 -mr-20 md:-mr-5"></div>
               </div>
             ))}
           </div>
