@@ -1,5 +1,6 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { BsSun, BsMoonStars } from "react-icons/bs";
 
 const ThemeButton = () => {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -21,7 +22,9 @@ const ThemeButton = () => {
           type="button"
           className="text-xl"
         >
-          <>☀️</>
+          <>
+            <BsSun />
+          </>
         </button>
       </>
     );
@@ -33,7 +36,9 @@ const ThemeButton = () => {
           type="button"
           className="text-xl"
         >
-          <>🌙</>
+          <>
+            <BsMoonStars />
+          </>
         </button>
       </>
     );
