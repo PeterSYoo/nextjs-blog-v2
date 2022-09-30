@@ -22,9 +22,13 @@ const ThemeButton = () => {
           type="button"
           className="text-xl"
         >
-          <>
+          <div className="group">
             <BsSun />
-          </>
+            <span className="sidebar-tooltip-left-triangle group-hover:scale-100 ml-[40px] -mt-[25px] md:ml-[70px] md:-mt-[25px]"></span>
+            <span className="sidebar-tooltip group-hover:scale-100 ml-[50px] -mt-[25px] md:ml-[80px] md:-mt-[25px]">
+              Lights on
+            </span>
+          </div>
         </button>
       </>
     );
@@ -36,9 +40,13 @@ const ThemeButton = () => {
           type="button"
           className="text-xl"
         >
-          <>
+          <div className="group">
             <BsMoonStars />
-          </>
+            <span className="sidebar-tooltip-left-triangle group-hover:scale-100 ml-[40px] -mt-[25px] md:ml-[70px] md:-mt-[25px]"></span>
+            <span className="sidebar-tooltip group-hover:scale-100 ml-[50px] -mt-[25px] md:ml-[80px] md:-mt-[25px]">
+              Lights off
+            </span>
+          </div>
         </button>
       </>
     );

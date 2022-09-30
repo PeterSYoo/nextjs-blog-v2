@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="md:hidden flex w-full justify-end pr-1 -mb-6">
+      <div className="md:hidden flex w-full justify-start -ml-[57px] -mb-4">
         <ThemeButton />
       </div>
       <div className="flex justify-between items-center -ml-20 md:flex-col md:items-end md:text-right md:justify-start md:p-5 md:pt-8 md:box md:col-span-1 md:row-span-2 md:border-r dark:md:border-gray-800 md:w-40 md:h-screen md:fixed md:border-gray-200">
@@ -39,31 +39,6 @@ const Header = () => {
           </div>
         </Link>
         <div className="md:flex md:flex-col md:items-end md:gap-20 md:pt-40 invisible md:visible">
-          {/* <Link href="/" className="cursor-pointer">
-            <div
-              onMouseEnter={() => setHomeHovering(true)}
-              onMouseLeave={() => setHomeHovering(false)}
-              className="max-h-5"
-            >
-              {homeHovering ? (
-                <div className="sidebar-icon group">
-                  <AiFillHome className="text-3xl cursor-pointer " />
-                  <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
-                  <span className="sidebar-tooltip group-hover:scale-100">
-                    Home
-                  </span>
-                </div>
-              ) : (
-                <div className="sidebar-icon group">
-                  <AiOutlineHome className="text-3xl cursor-pointer " />
-                  <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
-                  <span className="sidebar-tooltip group-hover:scale-100">
-                    Home
-                  </span>
-                </div>
-              )}
-            </div>
-          </Link> */}
           <Link href="https://petersyoo.netlify.app/" passHref>
             <div
               onMouseEnter={() => setPortfolioHovering(true)}
