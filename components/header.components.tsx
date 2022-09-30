@@ -64,15 +64,15 @@ const Header = () => {
               )}
             </div>
           </Link> */}
-          <Link href="https://petersyoo.netlify.app/" className="" passHref>
-            <a target="_blank">
-              <div
-                onMouseEnter={() => setPortfolioHovering(true)}
-                onMouseLeave={() => setPortfolioHovering(false)}
-                className="max-h-5"
-              >
+          <Link href="https://petersyoo.netlify.app/" passHref>
+            <div
+              onMouseEnter={() => setPortfolioHovering(true)}
+              onMouseLeave={() => setPortfolioHovering(false)}
+              className="max-h-5"
+            >
+              <a target="_blank">
                 {portfolioHovering ? (
-                  <div className="sidebar-icon group">
+                  <div className="sidebar-icon group cursor-pointer">
                     <HiBriefcase className="text-3xl" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
@@ -80,7 +80,7 @@ const Header = () => {
                     </span>
                   </div>
                 ) : (
-                  <div className="sidebar-icon">
+                  <div className="sidebar-icon cursor-pointer">
                     <HiOutlineBriefcase className="text-3xl" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
@@ -88,53 +88,45 @@ const Header = () => {
                     </span>
                   </div>
                 )}
-              </div>
-            </a>
+              </a>
+            </div>
           </Link>
-          <Link
-            href="https://www.linkedin.com/in/petersyoo/"
-            className="cursor-pointer"
-            passHref
-          >
-            <a target="_blank">
-              <div
-                onMouseEnter={() => setLiHovering(true)}
-                onMouseLeave={() => setLiHovering(false)}
-                className="max-h-5"
-              >
+          <Link href="https://www.linkedin.com/in/petersyoo/" passHref>
+            <div
+              onMouseEnter={() => setLiHovering(true)}
+              onMouseLeave={() => setLiHovering(false)}
+              className="max-h-5"
+            >
+              <a target="_blank">
                 {liHovering ? (
-                  <div className="sidebar-icon group">
-                    <RiLinkedinFill className="text-3xl cursor-pointer" />
+                  <div className="sidebar-icon group cursor-pointer">
+                    <RiLinkedinFill className="text-3xl" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
                       LinkedIn
                     </span>
                   </div>
                 ) : (
-                  <div className="sidebar-icon group">
-                    <RiLinkedinLine className="text-3xl cursor-pointer" />
+                  <div className="sidebar-icon group cursor-pointer">
+                    <RiLinkedinLine className="text-3xl" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
                       LinkedIn
                     </span>
                   </div>
                 )}
-              </div>
-            </a>
+              </a>
+            </div>
           </Link>
-          <Link
-            href="https://github.com/PeterSYoo"
-            className="cursor-pointer"
-            passHref
-          >
-            <a target="_blank">
-              <div
-                onMouseEnter={() => setGitHovering(true)}
-                onMouseLeave={() => setGitHovering(false)}
-                className="max-h-5"
-              >
+          <Link href="https://github.com/PeterSYoo" passHref>
+            <div
+              onMouseEnter={() => setGitHovering(true)}
+              onMouseLeave={() => setGitHovering(false)}
+              className="max-h-5"
+            >
+              <a target="_blank">
                 {gitHovering ? (
-                  <div className="sidebar-icon group">
+                  <div className="sidebar-icon group cursor-pointer">
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
                       GitHub
@@ -142,7 +134,7 @@ const Header = () => {
                     <RiGithubFill className="text-4xl cursor-pointer" />
                   </div>
                 ) : (
-                  <div className="sidebar-icon group">
+                  <div className="sidebar-icon group cursor-pointer">
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
                       GitHub
@@ -150,22 +142,18 @@ const Header = () => {
                     <RiGithubLine className="text-4xl cursor-pointer" />
                   </div>
                 )}
-              </div>
-            </a>
+              </a>
+            </div>
           </Link>
-          <Link
-            href="mailto:petersyoox@gmail.com"
-            className="cursor-pointer"
-            passHref
-          >
-            <a target="_blank">
-              <div
-                onMouseEnter={() => setEmailHovering(true)}
-                onMouseLeave={() => setEmailHovering(false)}
-                className="max-h-5"
-              >
+          <Link href="mailto:petersyoox@gmail.com" passHref>
+            <div
+              onMouseEnter={() => setEmailHovering(true)}
+              onMouseLeave={() => setEmailHovering(false)}
+              className="max-h-5"
+            >
+              <a target="_blank">
                 {emailHovering ? (
-                  <div className="sidebar-icon group">
+                  <div className="sidebar-icon group cursor-pointer">
                     <MdEmail className="text-3xl cursor-pointer" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
@@ -173,7 +161,7 @@ const Header = () => {
                     </span>
                   </div>
                 ) : (
-                  <div className="sidebar-icon group">
+                  <div className="sidebar-icon group cursor-pointer">
                     <MdOutlineMail className="text-3xl cursor-pointer" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
@@ -181,8 +169,8 @@ const Header = () => {
                     </span>
                   </div>
                 )}
-              </div>
-            </a>
+              </a>
+            </div>
           </Link>
         </div>
 
