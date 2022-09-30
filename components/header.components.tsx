@@ -39,13 +39,13 @@ const Header = () => {
           </div>
         </Link>
         <div className="md:flex md:flex-col md:items-end md:gap-20 md:pt-40 invisible md:visible">
-          <Link href="https://petersyoo.netlify.app/" passHref>
-            <div
-              onMouseEnter={() => setPortfolioHovering(true)}
-              onMouseLeave={() => setPortfolioHovering(false)}
-              className="max-h-5"
-            >
-              <a target="_blank">
+          <div
+            onMouseEnter={() => setPortfolioHovering(true)}
+            onMouseLeave={() => setPortfolioHovering(false)}
+            className="max-h-5"
+          >
+            <Link href="https://petersyoo.netlify.app/" passHref>
+              <a target="_blank" className="cursor-default">
                 {portfolioHovering ? (
                   <div className="sidebar-icon group cursor-pointer">
                     <HiBriefcase className="text-3xl" />
@@ -64,15 +64,15 @@ const Header = () => {
                   </div>
                 )}
               </a>
-            </div>
-          </Link>
-          <Link href="https://www.linkedin.com/in/petersyoo/" passHref>
-            <div
-              onMouseEnter={() => setLiHovering(true)}
-              onMouseLeave={() => setLiHovering(false)}
-              className="max-h-5"
-            >
-              <a target="_blank">
+            </Link>
+          </div>
+          <div
+            onMouseEnter={() => setLiHovering(true)}
+            onMouseLeave={() => setLiHovering(false)}
+            className="max-h-5"
+          >
+            <Link href="https://www.linkedin.com/in/petersyoo/" passHref>
+              <a target="_blank" className="cursor-default">
                 {liHovering ? (
                   <div className="sidebar-icon group cursor-pointer">
                     <RiLinkedinFill className="text-3xl" />
@@ -91,15 +91,15 @@ const Header = () => {
                   </div>
                 )}
               </a>
-            </div>
-          </Link>
-          <Link href="https://github.com/PeterSYoo" passHref>
-            <div
-              onMouseEnter={() => setGitHovering(true)}
-              onMouseLeave={() => setGitHovering(false)}
-              className="max-h-5"
-            >
-              <a target="_blank">
+            </Link>
+          </div>
+          <div
+            onMouseEnter={() => setGitHovering(true)}
+            onMouseLeave={() => setGitHovering(false)}
+            className="max-h-5"
+          >
+            <Link href="https://github.com/PeterSYoo" passHref>
+              <a target="_blank" className="cursor-default">
                 {gitHovering ? (
                   <div className="sidebar-icon group cursor-pointer">
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
@@ -118,15 +118,15 @@ const Header = () => {
                   </div>
                 )}
               </a>
-            </div>
-          </Link>
-          <Link href="mailto:petersyoox@gmail.com" passHref>
-            <div
-              onMouseEnter={() => setEmailHovering(true)}
-              onMouseLeave={() => setEmailHovering(false)}
-              className="max-h-5"
-            >
-              <a target="_blank">
+            </Link>
+          </div>
+          <div
+            onMouseEnter={() => setEmailHovering(true)}
+            onMouseLeave={() => setEmailHovering(false)}
+            className="max-h-5"
+          >
+            <Link href="mailto:petersyoox@gmail.com" passHref>
+              <a target="_blank" className="cursor-default">
                 {emailHovering ? (
                   <div className="sidebar-icon group cursor-pointer">
                     <MdEmail className="text-3xl cursor-pointer" />
@@ -145,8 +145,8 @@ const Header = () => {
                   </div>
                 )}
               </a>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
 
         <span className="flex flex-col text-3xl cursor-pointer md:hidden">
