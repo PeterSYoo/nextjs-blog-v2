@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import Head from 'next/head';
-import { sanityClient, urlFor } from '../sanity';
-import { Post } from '../typings';
-import Header from '../components/header.components';
-import PortableText from 'react-portable-text';
+import Link from "next/link";
+import Head from "next/head";
+import { sanityClient, urlFor } from "../sanity";
+import { Post } from "../typings";
+import Header from "../components/header.components";
+import PortableText from "react-portable-text";
 
 interface Props {
   posts: [Post];
@@ -15,7 +15,7 @@ const Home = ({ posts }: Props) => {
       <Head>
         <title>Peter Yoo's Blog</title>
       </Head>
-      <section className="min-w-screen bg-gray-100 min-h-screen ">
+      <section className="min-w-screen min-h-screen ">
         <div className="p-5 px-10 xl:px-20 max-w-screen-2xl md:p-0 md:px-0 md:border-none md:grid md:m-auto md:grid-rows-1 md:grid-cols-4 md:overflow-x-hidden">
           <div className="md:col-start-1 md:col-span-1 pl-20 ">
             <Header />

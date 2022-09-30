@@ -4,14 +4,20 @@
 
 @layer components {
   .sidebar-icon {
-    @apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto shadow-sm shadow-gray-900 hover:border-0 hover:shadow-lg hover:shadow-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white rounded-xl hover:rounded-xl md:transition-all md:ease-linear md:duration-100;
+    @apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto shadow-sm shadow-gray-900 dark:shadow-blue-300 hover:border-0 hover:shadow-lg hover:shadow-gray-900 dark:hover:shadow-blue-300 text-gray-900 dark:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-100 hover:text-white dark:hover:text-gray-900 rounded-xl hover:rounded-xl md:transition-all md:ease-linear md:duration-100;
   }
 
   .sidebar-tooltip-left-triangle {
-    @apply absolute left-14 transition-all duration-100 scale-0 origin-left border-solid border-r-gray-900 border-y-transparent border-y-[15px] border-l-0 border-r-[30px];
+    @apply absolute left-14 transition-all duration-100 scale-0 origin-left border-solid border-r-gray-900 dark:border-r-gray-100 border-y-transparent border-y-[15px] border-l-0 border-r-[30px];
   }
 
   .sidebar-tooltip {
-    @apply absolute w-auto p-2 m-2 min-w-max left-[55px] rounded-lg text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left;
+    @apply absolute w-auto p-2 m-2 min-w-max left-[55px] rounded-lg text-white dark:text-gray-900 bg-gray-900 dark:bg-gray-100 text-xs font-bold transition-all duration-100 scale-0 origin-left;
+  }
+}
+
+@layer base {
+  body {
+    @apply dark:bg-gray-900 dark:text-gray-100;
   }
 }

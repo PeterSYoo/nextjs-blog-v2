@@ -1,10 +1,10 @@
-import { GetStaticProps } from 'next';
-import React, { useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import Header from '../../components/header.components';
-import { sanityClient, urlFor } from '../../sanity';
-import { Post } from '../../typings';
-import PortableText from 'react-portable-text';
+import { GetStaticProps } from "next";
+import React, { useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+import Header from "../../components/header.components";
+import { sanityClient, urlFor } from "../../sanity";
+import { Post } from "../../typings";
+import PortableText from "react-portable-text";
 
 interface IFormInput {
   _id: string;
@@ -27,8 +27,8 @@ const Posts = ({ post }: Props) => {
   } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    await fetch('/api/createComment', {
-      method: 'Post',
+    await fetch("/api/createComment", {
+      method: "Post",
       body: JSON.stringify(data),
     })
       .then(() => {
@@ -42,7 +42,7 @@ const Posts = ({ post }: Props) => {
   };
 
   return (
-    <section className="min-h-screen min-w-screen bg-gray-100">
+    <section className="min-h-screen min-w-screen">
       <div className="max-w-screen-[375px] px-10 md:max-w-screen-2xl md:mx-auto md:grid md:grid-rows-1 md:grid-cols-4">
         <div className="md:col-start-1 md:col-span-1 pl-20">
           <Header />
@@ -121,34 +121,38 @@ const Posts = ({ post }: Props) => {
                 <hr className="py-3 mt-2" />
 
                 <input
-                  {...register('_id')}
+                  {...register("_id")}
                   type="hidden"
                   name="_id"
                   value={post._id}
                 />
 
                 <label className="block mb-5">
-                  <span className="text-gray-700">Name</span>
+                  <span className="text-gray-700 dark:text-gray-500">Name</span>
                   <input
-                    {...register('name', { required: true })}
+                    {...register("name", { required: true })}
                     className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
                     placeholder="John Doe"
                     type="text"
                   />
                 </label>
                 <label className="block mb-5">
-                  <span className="text-gray-700">Email</span>
+                  <span className="text-gray-700 dark:text-gray-500">
+                    Email
+                  </span>
                   <input
-                    {...register('email', { required: true })}
+                    {...register("email", { required: true })}
                     className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
                     placeholder="johndoe@gmail.com"
                     type="email"
                   />
                 </label>
                 <label className="block mb-5">
-                  <span className="text-gray-700">Comment</span>
+                  <span className="text-gray-700 dark:text-gray-500">
+                    Comment
+                  </span>
                   <textarea
-                    {...register('comment', { required: true })}
+                    {...register("comment", { required: true })}
                     className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
                     placeholder="Type something..."
                     rows={8}
@@ -230,7 +234,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 };
 
