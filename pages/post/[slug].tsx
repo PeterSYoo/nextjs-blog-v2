@@ -105,7 +105,7 @@ const Posts = ({ post }: Props) => {
 
           <div className="flex flex-col items-center w-full pb-40">
             {submitted ? (
-              <div className="flex flex-col p-10 my-10 bg-gray-400 text-white max-w-2xl mx-auto">
+              <div className="flex flex-col p-10 my-10 bg-gray-400 text-white max-w-2xl mx-auto dark:bg-gray-700">
                 <h3 className="text-3xl font-bold">
                   Thank you for submitting your comment!
                 </h3>
@@ -131,7 +131,7 @@ const Posts = ({ post }: Props) => {
                   <span className="text-gray-700 dark:text-gray-500">Name</span>
                   <input
                     {...register("name", { required: true })}
-                    className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
+                    className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1 dark:bg-gray-100 dark:text-gray-900"
                     placeholder="John Doe"
                     type="text"
                   />
@@ -142,7 +142,7 @@ const Posts = ({ post }: Props) => {
                   </span>
                   <input
                     {...register("email", { required: true })}
-                    className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
+                    className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-gray-500 outline-none focus:ring-1 dark:bg-gray-100 dark:text-gray-900"
                     placeholder="johndoe@gmail.com"
                     type="email"
                   />
@@ -153,7 +153,7 @@ const Posts = ({ post }: Props) => {
                   </span>
                   <textarea
                     {...register("comment", { required: true })}
-                    className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-gray-500 outline-none focus:ring-1"
+                    className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-gray-500 outline-none focus:ring-1 dark:bg-gray-100 dark:text-gray-900"
                     placeholder="Type something..."
                     rows={8}
                   />
