@@ -3,9 +3,9 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Router, { useRouter } from "next/router";
 import * as ga from "../lib/ga";
-import PropagateLoader from "react-spinners/PropagateLoader";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
+import Loader from "../components/loader.components";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider attribute="class">
         {loading ? (
           <div className="flex flex-col justify-center items-center min-h-screen min-w-screen">
-            <PropagateLoader />
+            <Loader />
           </div>
         ) : (
           <>
