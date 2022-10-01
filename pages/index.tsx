@@ -24,7 +24,7 @@ const Home = ({ posts }: Props) => {
           {/* Post */}
           <div className="pt-10 pr-20 mx-auto flex flex-col mr-20 md:-ml-10 md:p-14 md:box md:row-span-1 md:col-start-2 md:col-span-3 h-full w-full">
             {posts.map((post) => (
-              <div>
+              <div key={post._id}>
                 <div className="grid grid-cols-6">
                   <div className="col-span-5">
                     <div className="flex justify-between pt-5">
