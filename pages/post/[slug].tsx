@@ -44,7 +44,7 @@ const Posts = ({ post }: Props) => {
   return (
     <section className="min-h-screen min-w-screen">
       <div className="max-w-screen-[375px] px-10 md:max-w-screen-2xl md:mx-auto md:grid md:grid-rows-1 md:grid-cols-4">
-        <div className="md:col-start-1 md:col-span-1 pl-20 mt-5">
+        <div className="md:col-start-1 md:col-span-1 pl-20 mt-5 md:mt-0">
           <Header />
         </div>
 
