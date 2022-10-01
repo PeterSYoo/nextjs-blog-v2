@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        dark: "0 5px 20px 0 rgba(0, 0, 0, 0.5)",
+      },
       screens: {
         "3xl": "1600px",
         "4xl": "1800px",

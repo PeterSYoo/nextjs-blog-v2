@@ -30,7 +30,7 @@ const Header = () => {
           <ThemeButton />
         </div>
         <Link href="/">
-          <div className="md:text-center text-2xl md:text-2xl font-bold p-2 shadow-sm shadow-gray-900 dark:shadow-blue-300 rounded bg-gray-900 text-white md:bg-gray-100 dark:md:bg-gray-900 md:text-gray-900 dark:md:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-100 transition-all duration-100 ease-linear hover:text-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-gray-900 dark:hover:shadow-blue-300 hover:rounded group cursor-pointer">
+          <div className="md:text-center text-2xl md:text-2xl font-bold p-2 shadow-sm shadow-gray-900 dark:shadow-blue-300 rounded bg-gray-900 text-white md:bg-gray-100 dark:md:bg-gray-900 md:text-gray-900 dark:md:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-900 transition-all duration-100 ease-linear hover:text-white dark:hover:text-gray-100 hover:shadow-lg dark:hover:shadow-dark hover:shadow-gray-900 dark:hover:shadow-blue-300 hover:rounded group cursor-pointer">
             <span className="sidebar-tooltip-left-triangle group-hover:scale-100 left-[115px] md:left-[145px]"></span>
             <span className="sidebar-tooltip group-hover:scale-100 left-[115px] -mt-[1px] md:left-[145px] md:-mt-[1px]">
               Home
