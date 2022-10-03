@@ -47,7 +47,7 @@ const Header = () => {
             <Link href="https://petersyoo.netlify.app/" passHref>
               <a target="_blank" className="cursor-default">
                 {portfolioHovering ? (
-                  <div className="sidebar-icon group cursor-pointer">
+                  <div className="sidebar-icon group cursor-pointer -mt-1">
                     <HiBriefcase className="text-3xl" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
@@ -55,7 +55,7 @@ const Header = () => {
                     </span>
                   </div>
                 ) : (
-                  <div className="sidebar-icon cursor-pointer">
+                  <div className="sidebar-icon group cursor-pointer -mt-1">
                     <HiOutlineBriefcase className="text-3xl" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
@@ -74,7 +74,7 @@ const Header = () => {
             <Link href="https://www.linkedin.com/in/petersyoo/" passHref>
               <a target="_blank" className="cursor-default">
                 {liHovering ? (
-                  <div className="sidebar-icon group cursor-pointer">
+                  <div className="sidebar-icon group cursor-pointer -mt-1">
                     <RiLinkedinFill className="text-3xl" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
@@ -82,7 +82,7 @@ const Header = () => {
                     </span>
                   </div>
                 ) : (
-                  <div className="sidebar-icon group cursor-pointer">
+                  <div className="sidebar-icon group cursor-pointer -mt-1">
                     <RiLinkedinLine className="text-3xl" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
@@ -101,7 +101,7 @@ const Header = () => {
             <Link href="https://github.com/PeterSYoo" passHref>
               <a target="_blank" className="cursor-default">
                 {gitHovering ? (
-                  <div className="sidebar-icon group cursor-pointer">
+                  <div className="sidebar-icon group cursor-pointer -mt-1">
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
                       GitHub
@@ -109,7 +109,7 @@ const Header = () => {
                     <RiGithubFill className="text-4xl cursor-pointer" />
                   </div>
                 ) : (
-                  <div className="sidebar-icon group cursor-pointer">
+                  <div className="sidebar-icon group cursor-pointer -mt-1">
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
                       GitHub
@@ -128,7 +128,7 @@ const Header = () => {
             <Link href="mailto:petersyoox@gmail.com" passHref>
               <a target="_blank" className="cursor-default">
                 {emailHovering ? (
-                  <div className="sidebar-icon group cursor-pointer">
+                  <div className="sidebar-icon group cursor-pointer -mt-1">
                     <MdEmail className="text-3xl cursor-pointer" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
@@ -136,7 +136,7 @@ const Header = () => {
                     </span>
                   </div>
                 ) : (
-                  <div className="sidebar-icon group cursor-pointer">
+                  <div className="sidebar-icon group cursor-pointer -mt-1">
                     <MdOutlineMail className="text-3xl cursor-pointer" />
                     <span className="sidebar-tooltip-left-triangle group-hover:scale-100"></span>
                     <span className="sidebar-tooltip group-hover:scale-100">
